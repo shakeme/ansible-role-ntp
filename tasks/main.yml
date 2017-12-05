@@ -1,0 +1,7 @@
+---
+# tasks file for ntp
+
+- include_tasks: "{{ ansible_os_family }}.yml"
+  when: role_ntp_enabled
+  tags: ntp
+

@@ -1,0 +1,5 @@
+---
+# defaults file for ntp
+
+role_ntp_enabled: no
+

@@ -1,0 +1,21 @@
+---
+# tasks for ntp at Debian
+
+- block:
+
+  - name: Ensure ntp
+    apt:
+      name: ntp
+      state: present
+
+  - name: Ensure ntp config
+    template:
+      src: ntp.conf.j2
+      dest: /etc/ntp.conf
+      mode: 0644
+      owner: root
+      group: root
+    when: ntp_servers is defined
+
+  become: true
+
